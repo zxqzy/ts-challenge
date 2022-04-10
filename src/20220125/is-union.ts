@@ -3,7 +3,10 @@ type IsUnion<T> =
   ? false
   : true;
 
-type TTTT = Array<string | number> extends Array<string> | Array<number> ? true : false
+type MyArray<T> = T[]
+type ArrayT = MyArray<string | number> // Array<string | number>
+type TTTT = Array<string | number> extends Array<string> | Array<number> ? true : false // false
+type TReverse = Array<string> | Array<number> extends Array<string | number> ? true : false // true
 
 // type IsUnion<T, U = T> = T extends U ? [U] extends [T] ? false : true :never
 
@@ -40,3 +43,5 @@ type L = N<number | string>
 const la: L = [1]
 
 // 特别巧妙的运用了继承
+
+type NNN = never extends never ? true : false

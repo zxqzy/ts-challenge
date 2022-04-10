@@ -10,4 +10,4 @@ type OnlyBoolean = PickByType<{
   isEnable: boolean
 }, boolean>
 
-type A = Pick<{ a: 1, b: 1 }, 'a'>
+type AAA = Pick<{ a: 1, b: 1 }, 'a'>

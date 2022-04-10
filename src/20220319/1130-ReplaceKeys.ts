@@ -1,3 +1,4 @@
+// https://github.com/type-challenges/type-challenges/tree/master/questions/1130-medium-replacekeys
 type A = '1' | '2' extends '1' ? true : false
 
 type B = '1' extends '1' | '2' ? true : false
