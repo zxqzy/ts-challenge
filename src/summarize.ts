@@ -40,10 +40,7 @@ type Unique1<T extends readonly any[]> = T extends [infer F, ...infer R]
  */
  type LookUp1<T extends { type: string }, U extends string> = T extends { type: U } ? T : never
 
- type IsUnion2<T> =
- T[] extends (T extends any ? T[] : never)
- ? false
- : true
+ type IsUnion2<T> = T[] extends (T extends any ? T[] : never) ? false : true
 
  type IsUnion3<T, U = T> = T extends U ? [U] extends [T] ? false : true :never
 
@@ -51,4 +48,4 @@ type Unique1<T extends readonly any[]> = T extends [infer F, ...infer R]
   * 可以借助第三个变量
   */
 type DropChar1<T extends string, U extends string, V extends string = ''> = T extends `${infer F}${infer L}`
-  ? F extends U ? DropChar<L, U,`${V}`> : DropChar<L, U, `${V}${F}`> : V
+  ? F extends U ? DropChar1<L, U,`${V}`> : DropChar1<L, U, `${V}${F}`> : V
